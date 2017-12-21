@@ -154,9 +154,8 @@ Player.prototype.handleInput = function(key) {
                     showMessage('WINNER!!!!!!!!! (reset game in 3 seconds)','green');
                     updateScore('win');
                     setTimeout(function() {
-                        //TODO: why doesnt this.reset() work here?
-                        player.reset();
-                    }, 3000);
+                        this.reset();
+                    }.bind(this), 3000);
                 }
             }
         break;
