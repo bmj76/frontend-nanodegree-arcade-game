@@ -2,8 +2,8 @@
 // These could change if the size of the canvas changes
 // TODO: investigate what the zoom level of the browser
 // means to these values.
-var xMove = 100;
-var yMove = 80;
+const xMove = 100;
+const yMove = 80;
 // showMessage displays a temporary message to the user.
 // Pass in the message and HTML compatible color name.
 function showMessage(message,color) {
