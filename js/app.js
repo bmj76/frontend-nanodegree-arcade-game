@@ -2,8 +2,8 @@
 // These could change if the size of the canvas changes
 // TODO: investigate what the zoom level of the browser
 // means to these values.
-const xMove = 100;
-const yMove = 80;
+const X_MOVE = 100;
+const Y_MOVE = 80;
 // showMessage displays a temporary message to the user.
 // Pass in the message and HTML compatible color name.
 function showMessage(message,color) {
@@ -144,12 +144,12 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
     switch (key) {
         case 'up':
-            if (this.y - yMove <= -50) {
+            if (this.y - Y_MOVE <= -50) {
                 showMessage('Can\'t move further up!', 'orange');
             }
             else
             {
-                this.y -= yMove;
+                this.y -= Y_MOVE;
                 if (this.y < 40) {
                     showMessage('WINNER!!!!!!!!! (reset game in 3 seconds)','green');
                     updateScore('win');
@@ -160,30 +160,30 @@ Player.prototype.handleInput = function(key) {
             }
         break;
         case 'down':
-            if (this.y + yMove >= 450) {
+            if (this.y + Y_MOVE >= 450) {
                 showMessage('Can\'t move further down!', 'orange');
             }
             else
             {
-                this.y += yMove;
+                this.y += Y_MOVE;
             }
         break;
         case 'left':
-            if (this.x - xMove <= -1) {
+            if (this.x - X_MOVE <= -1) {
                 showMessage('Can\'t move further left!', 'orange');
             }
             else
             {
-                this.x -= xMove;
+                this.x -= X_MOVE;
             }
         break;
         case 'right':
-            if (this.x + xMove >= 500) {
+            if (this.x + X_MOVE >= 500) {
                 showMessage('Can\'t move further right!', 'orange');
             }
             else
             {
-                this.x += xMove;
+                this.x += X_MOVE;
             }
         break;
         default:
